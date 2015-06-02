@@ -13,6 +13,20 @@ class SchoolistService
    parse(connection.get("schools/#{id}").body)
   end
 
+  def counties
+    parse(connection.get('counties').body)
+  end
+
+  def county(id)
+   parse(connection.get("counties/#{id}").body)
+  end
+
+  private
+
+    def parse(response)
+     JSON.parse(response, symbolize_names: true)
+    end
+
   private
 
     def parse(response)
