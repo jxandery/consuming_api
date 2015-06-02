@@ -7,4 +7,10 @@ class School
   def self.all
     service.schools
   end
+
+  def self.find(id)
+    service.school(id)
+  end
+
+
 end
