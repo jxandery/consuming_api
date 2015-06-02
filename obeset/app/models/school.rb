@@ -1,16 +1,14 @@
-class School
+class School < OpenStruct
 
   def self.service
     @service ||= SchoolistService.new
   end
 
   def self.all
-    service.schools
+    service.schools.map {|data| new(data)}
   end
 
   def self.find(id)
-    service.school(id)
+    new(service.school(id))
   end
-
-
 end
