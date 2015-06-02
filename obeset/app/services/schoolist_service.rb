@@ -13,6 +13,10 @@ class SchoolistService
    parse(connection.get("schools/#{id}").body)
   end
 
+  def create_school(params)
+    parse(connection.post('schools', params).body)
+  end
+
   def counties
     parse(connection.get('counties').body)
   end

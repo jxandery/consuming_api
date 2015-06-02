@@ -7,4 +7,13 @@ class SchoolsController < ApplicationController
   def show
     @school = School.find(params[:id])
   end
+
+  def new
+  end
+
+  def create
+    school = School.create(params)
+
+    redirect_to school_path(id: school.id)
+  end
 end
