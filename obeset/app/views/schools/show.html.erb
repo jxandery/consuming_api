@@ -1,4 +1,4 @@
-<h3><%= @school[:uid] %></h3>
-<p><%= @school[:overweight_percentage] %></p>
-<p><%= @school[:obese_percentage] %></p>
-
+<h3><%= @school.uid %></h3>
+<p><%= @school.overweight_percentage %></p>
+<p><%= @school.obese_percentage %></p>
+<%= link_to 'Delete School', school_path(id: @school.id), method: :delete %>

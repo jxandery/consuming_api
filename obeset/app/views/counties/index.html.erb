@@ -1,6 +1,5 @@
-<%= @counties.each do |county| %>
-  <h3><%= county[:uid] %></h3>
-  <p><%= county[:overweight_percentage] %></p>
-  <p><%= county[:obsese_percentage] %></p>
+<% @counties.each do |county| %>
+  <h3><%= county.id %></h3>
+  <p><%= county.name %></p>
 <% end %>
 

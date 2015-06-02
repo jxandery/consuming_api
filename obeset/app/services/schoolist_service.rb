@@ -17,6 +17,14 @@ class SchoolistService
     parse(connection.post('schools', params).body)
   end
 
+  def update_school(id, params)
+    connection.put("schools/#{id}", params)
+  end
+
+  def destroy_school(id)
+    connection.delete("schools/#{id}")
+  end
+
   def counties
     parse(connection.get('counties').body)
   end
@@ -30,11 +38,4 @@ class SchoolistService
     def parse(response)
      JSON.parse(response, symbolize_names: true)
     end
-
-  private
-
-    def parse(response)
-     JSON.parse(response, symbolize_names: true)
-    end
-
 end
