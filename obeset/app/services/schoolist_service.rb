@@ -6,7 +6,7 @@ class SchoolistService
   end
 
   def schools
-    connection.get('schools')
+    JSON.parse(connection.get('schools').body)
   end
 
 end
